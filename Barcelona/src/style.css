@@ -1,28 +1,328 @@
-h1 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 30px;
+:root {
   color: #173d34;
-}
-h3 {
-  font-size: 19px;
   color: #65776f;
-  margin-bottom: 29.5px;
+  color: #126348;
+  color: #fff;
 }
-button {
-  background: #126348;
-  color: #ffff;
-  opacity: 100%;
-  border-radius: 28px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.grid-header {
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+}
+.container {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
-@media (max-width: 900px) {
-  .header-content-container,
-  .header-image-container {
+.text-center {
+  text-align: center;
+}
+.grid {
+  display: grid;
+  gap: 64px;
+}
+.img-responsive {
+  width: 100%;
+  display: block;
+}
+.grid-2-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-3-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin: 30px 0;
+}
+.card-header.grid {
+  grid-gap: 0;
+}
+.card-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.card-header .img-responsive {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+.card-body {
+  flex: 1;
+  padding: 30px;
+}
+.card-footer {
+  padding: 0 30px 30px;
+}
+.btn {
+  display: block;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px;
+  background-color: #126348;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "brand . links"
+    "credit credit credit";
+  column-gap: 48px;
+  row-gap: 24px;
+  align-items: start;
+}
+.instagram-embeds {
+  margin: 30px 0;
+  min-width: 0;
+}
+.instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+.footer-brand {
+  grid-area: brand;
+}
+.footer-links {
+  grid-area: links;
+  justify-self: end;
+  text-align: right;
+}
+.footer-credit {
+  grid-area: credit;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 30px;
+}
+section {
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(32px, 7vw, 100px);
+}
+section.secondary {
+  background: #f8f8f8;
+}
+header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("../images/park-guell.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+}
+header h1 {
+  font-weight: 700;
+  font-size: clamp(40px, 7vw, 86px);
+  line-height: 1;
+  margin: 30px 0;
+}
+header h2 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.5;
+  margin: 0;
+}
+header h3 {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 5px;
+  margin: 0;
+}
+header a {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: #126348;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 5px;
+  color: #272044;
+  opacity: 0.3;
+  text-transform: uppercase;
+}
+main h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.5;
+  color: #272044;
+  margin: 0;
+}
+main h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  color: #272044;
+  margin: 0;
+}
+main h5 {
+  font-weight: 700;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1;
+  color: #272044;
+}
+main p {
+  font-size: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #272044;
+  opacity: 0.7;
+}
+footer {
+  background-image:
+    linear-gradient(rgba(20, 34, 48, 0.78), rgba(20, 34, 48, 0.88)),
+    url("../images/barcelona-skyline.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+footer section {
+  padding: 56px clamp(24px, 6vw, 80px) 24px;
+}
+footer h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0 0 12px;
+}
+footer p {
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.7;
+  line-height: 24px;
+  margin: 0;
+}
+footer a {
+  color: #fff;
+  text-underline-offset: 3px;
+}
+.footer-brand h3 {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+.footer-links h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.footer-credit {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+  margin-top: 12px;
+}
+@media (max-width: 800px) {
+  section {
+    padding: 48px 32px;
+  }
+  header {
+    padding: 60px 0;
+  }
+  header h2 {
+    font-size: 20px;
+  }
+  header h3 {
+    font-size: 10px;
+  }
+  .grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .grid-3-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  footer section {
+    padding: 36px 32px 20px;
+  }
+  footer h3 {
+    font-size: 16px;
+  }
+  footer p {
+    font-size: 13px;
+  }
+  .grid-footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "links"
+      "credit";
+    gap: 16px;
+  }
+  .footer-brand {
+    display: block;
+  }
+  .footer-links {
+    justify-self: start;
+    text-align: left;
+  }
+  .footer-credit {
+    white-space: normal;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 560px) {
+  .container {
+    padding: 12px;
+  }
+  section {
+    padding: 32px 20px;
+  }
+  footer section {
+    padding: 32px 20px 20px;
+  }
+  .grid-3-columns,
+  .grid-2-columns,
+  .card-header {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    gap: 24px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  .card-footer {
+    padding: 0 20px 20px;
+  }
+  header h1 {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+  main h3 {
+    font-size: 28px;
   }
 }
